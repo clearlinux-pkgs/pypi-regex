@@ -4,7 +4,7 @@
 #
 Name     : pypi-regex
 Version  : 2022.10.31
-Release  : 55
+Release  : 56
 URL      : https://files.pythonhosted.org/packages/27/b5/92d404279fd5f4f0a17235211bb0f5ae7a0d9afb7f439086ec247441ed28/regex-2022.10.31.tar.gz
 Source0  : https://files.pythonhosted.org/packages/27/b5/92d404279fd5f4f0a17235211bb0f5ae7a0d9afb7f439086ec247441ed28/regex-2022.10.31.tar.gz
 Summary  : Alternative regular expression module, to replace re.
