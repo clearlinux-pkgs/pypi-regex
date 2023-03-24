@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-regex
-Version  : 2023.3.22
-Release  : 57
-URL      : https://files.pythonhosted.org/packages/30/a2/54bfa43f075692a6158651537958d72ee679328dbe0666de129830db7ea7/regex-2023.3.22.tar.gz
-Source0  : https://files.pythonhosted.org/packages/30/a2/54bfa43f075692a6158651537958d72ee679328dbe0666de129830db7ea7/regex-2023.3.22.tar.gz
+Version  : 2023.3.23
+Release  : 58
+URL      : https://files.pythonhosted.org/packages/d8/29/bd8de07107bc952e0e2783243024e1c125e787fd685725a622e4ac7aeb3c/regex-2023.3.23.tar.gz
+Source0  : https://files.pythonhosted.org/packages/d8/29/bd8de07107bc952e0e2783243024e1c125e787fd685725a622e4ac7aeb3c/regex-2023.3.23.tar.gz
 Summary  : Alternative regular expression module, to replace re.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -74,10 +74,10 @@ python3 components for the pypi-regex package.
 
 
 %prep
-%setup -q -n regex-2023.3.22
-cd %{_builddir}/regex-2023.3.22
+%setup -q -n regex-2023.3.23
+cd %{_builddir}/regex-2023.3.23
 pushd ..
-cp -a regex-2023.3.22 buildavx2
+cp -a regex-2023.3.23 buildavx2
 popd
 
 %build
@@ -85,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679586593
+export SOURCE_DATE_EPOCH=1679673074
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
