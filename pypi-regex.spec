@@ -5,14 +5,12 @@
 #
 Name     : pypi-regex
 Version  : 2023.3.23
-Release  : 58
+Release  : 59
 URL      : https://files.pythonhosted.org/packages/d8/29/bd8de07107bc952e0e2783243024e1c125e787fd685725a622e4ac7aeb3c/regex-2023.3.23.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d8/29/bd8de07107bc952e0e2783243024e1c125e787fd685725a622e4ac7aeb3c/regex-2023.3.23.tar.gz
 Summary  : Alternative regular expression module, to replace re.
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: pypi-regex-filemap = %{version}-%{release}
-Requires: pypi-regex-lib = %{version}-%{release}
 Requires: pypi-regex-license = %{version}-%{release}
 Requires: pypi-regex-python = %{version}-%{release}
 Requires: pypi-regex-python3 = %{version}-%{release}
@@ -26,24 +24,6 @@ BuildRequires : python3-dev
 Introduction
 ------------
 This regex implementation is backwards-compatible with the standard 're' module, but offers additional functionality.
-
-%package filemap
-Summary: filemap components for the pypi-regex package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-regex package.
-
-
-%package lib
-Summary: lib components for the pypi-regex package.
-Group: Libraries
-Requires: pypi-regex-license = %{version}-%{release}
-Requires: pypi-regex-filemap = %{version}-%{release}
-
-%description lib
-lib components for the pypi-regex package.
-
 
 %package license
 Summary: license components for the pypi-regex package.
@@ -65,7 +45,6 @@ python components for the pypi-regex package.
 %package python3
 Summary: python3 components for the pypi-regex package.
 Group: Default
-Requires: pypi-regex-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(regex)
 
@@ -85,15 +64,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679673074
+export SOURCE_DATE_EPOCH=1683047531
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -128,14 +107,6 @@ popd
 %files
 %defattr(-,root,root,-)
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-regex
-
-%files lib
-%defattr(-,root,root,-)
-/usr/share/clear/optimized-elf/other*
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-regex/692d7ee2ea91449bb8354092cedb2fd1f5a7a2e0
@@ -145,4 +116,5 @@ popd
 
 %files python3
 %defattr(-,root,root,-)
+/V3/usr/lib/python3*/*
 /usr/lib/python3*/*
