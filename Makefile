@@ -1,5 +1,5 @@
 PKG_NAME := pypi-regex
-URL = https://files.pythonhosted.org/packages/4f/1d/6998ba539616a4c8f58b07fd7c9b90c6b0f0c0ecbe8db69095a6079537a7/regex-2023.8.8.tar.gz
+URL = https://files.pythonhosted.org/packages/6b/38/49d968981b5ec35dbc0f742f8219acab179fc1567d9c22444152f950cf0d/regex-2023.10.3.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
